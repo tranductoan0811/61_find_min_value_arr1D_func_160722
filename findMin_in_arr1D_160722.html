@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function minIndex_Arr(arr) {
+      var index_min = '';
+      var min_value = arr[0];
+      var mess = '';
+  
+      if (arr.length == 0) {
+        index_min = -1;
+        mess += ", Mảng rỗng";
+      } 
+      else if (arr.length > 0) {
+              for (let i = 0; i< arr.length; i++) {
+                  if (arr[i] <= min_value) {
+                    index_min = i;
+                    
+                  }
+              }
+              mess += ", mảng có tổng số phần tử là: " + (arr.length-1);
+      }
+      return [index_min,mess];
+    }
+  
+  </script>
+
+  <script>
+    function display_arr1D(arr) {
+      if (arr.length == 0) {
+          document.write(" mảng rỗng");
+      } else if (arr.length >= 1) {
+        for (let i = 0; i < arr.length; i++) {
+        document.write(arr[i] + " ");
+        }
+      }
+    }
+
+  </script>
+
+  <script>
+    function minArr(arr) {
+      let min_value = arr[0];
+      if (arr.length == 0) {
+        min_value = ' mảng rỗng';
+        if (arr.length >= 1) {
+        for (let i = 1; i < arr.length; i++) {
+          if (arr[i] <= min_value) {
+          min_value = arr[i];
+          }
+
+        }
+      }
+
+      }
+      return min_value;
+
+    }
+
+  </script>
+
+</head>
+<body>
+  <h2>tìm giá trị nhỏ nhất của mảng 1 chiều, có mảng rỗng</h2>
+  <script>
+    var arr1 = [3, 5, 1, 8, -3, 7, 8];
+    var arr2 = [7, 12, 6, 9, 20, 56, 89];
+    var arr3 = []; 
+    var arr4 = [0, 0, 0, 0, 0, 0];
+
+    let [index1,mess1] = minIndex_Arr(arr1);
+    let [index2,mess2] = minIndex_Arr(arr2);
+    let [index3,mess3] = minIndex_Arr(arr3);
+    let [index4,mess4] = minIndex_Arr(arr4);
+
+    let min1 = minArr(arr1);
+    let min2 = minArr(arr2);
+    let min3 = minArr(arr3);
+    let min4 = minArr(arr4);
+    
+    
+    document.write("Mảng 1: ");display_arr1D(arr1);document.write("<br>");
+    document.write("Mảng 2: ");display_arr1D(arr2);document.write("<br>");
+    document.write("Mảng 3: ");display_arr1D(arr3);document.write("<br>");
+    document.write("Mảng 4: ");display_arr1D(arr4);document.write("<br>");
+    
+    document.write("<br>" + "******************" + "<br>");
+    document.write("<br>" + "Số min trong mảng 1: " + min1 + ", index : " + index1 + mess1 + "<br>");
+    document.write("<br>" + "Số min trong mảng 2: " + min2 + ", index : " + index2 + mess2  + "<br>");
+    document.write("<br>" + "Số min trong mảng 3: " + min3 + ", index : " + index3 + mess3 + "<br>");
+    document.write("<br>" + "Số min trong mảng 4: " + min4 + ", index : " + index4 + mess4 + "<br>");
+    
+  </script>
+  
+</body>
+
+</html>
+
+
+
